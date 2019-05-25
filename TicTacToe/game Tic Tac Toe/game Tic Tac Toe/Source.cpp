@@ -7,7 +7,7 @@ char player = 'X';
 
 // menampilkan TIc Tac Toe
 void Draw() {
-
+	system("cls");
 	cout << "Tic Tac Toe v1.0" << endl;
 	for (int i = 0; i < 3; i++) {
 		for (int j = 0; j < 3; j++) {
