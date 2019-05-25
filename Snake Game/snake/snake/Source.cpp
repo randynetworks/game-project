@@ -21,12 +21,18 @@ void draw() {
 	for (int i = 0; i < width ; i++) {
 		cout << "#";
 	}
-
+	// area tengah 
 	for (int i = 0; i < height; i++) {
 		for (int j = 0; j < width; j++) {
 			if (j == 0) {
 				cout << "#";
 			
+			}
+			if (i == y && j == x){
+				cout << "0";
+			}
+			else if (i == fruitY && j == fruitX){
+				cout << "F";
 			}
 			else {
 				cout << " ";
