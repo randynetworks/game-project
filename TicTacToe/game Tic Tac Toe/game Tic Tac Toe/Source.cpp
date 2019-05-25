@@ -52,6 +52,16 @@ void input() {
 	}
 }
 
+//membuat perpindahan player
+void togglePlayer() {
+	if (player == 'X') {
+		player = 'O';
+	}
+	else {
+		player = 'X';
+	}
+}
+
 int main() {
 
 	Draw();
