@@ -86,7 +86,7 @@ char win() {
 		return 'X';
 	}
 	// diagonal
-	else if (matrix[0][0] == 'X' && matrix[1][11] == 'X' && matrix[2][22] == 'X') {
+	else if (matrix[0][0] == 'X' && matrix[1][1] == 'X' && matrix[2][2] == 'X') {
 		return 'X';
 	}
 	else if (matrix[2][0] == 'X' && matrix[1][1] == 'X' && matrix[0][2] == 'X') {
@@ -114,7 +114,7 @@ char win() {
 		return 'O';
 	}
 	// diagonal
-	else if (matrix[0][0] == 'O' && matrix[1][11] == 'O' && matrix[2][22] == 'O') {
+	else if (matrix[0][0] == 'O' && matrix[1][1] == 'O' && matrix[2][2] == 'O') {
 		return 'O';
 	}
 	else if (matrix[2][0] == 'O' && matrix[1][1] == 'O' && matrix[0][2] == 'O') {
