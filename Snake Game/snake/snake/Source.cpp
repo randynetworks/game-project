@@ -16,6 +16,33 @@ void setup() {
 	Score = 0;
 }	
 void draw() {
+	system("cls");
+	// membuat map top
+	for (int i = 0; i < width ; i++) {
+		cout << "#";
+	}
+
+	for (int i = 0; i < height; i++) {
+		for (int j = 0; j < width; j++) {
+			if (j == 0) {
+				cout << "#";
+			
+			}
+			else {
+				cout << " ";
+			}
+			if (j == width - 1) {
+				cout << "#";
+			}
+		}
+		cout << endl;
+	}
+
+	// membuat map battom
+	for (int i = 0; i < width +1; i++) {
+		cout << "#";
+	}
+
 
 }
 void input() {
