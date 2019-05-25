@@ -4,6 +4,7 @@ using namespace std;
 
 char matrix[3][3] = { '1','2','3','4','5','6','7','8','9' };
 char player = 'X';
+int n;
 
 // menampilkan TIc Tac Toe
 void Draw() {
@@ -120,6 +121,9 @@ char win() {
 	else if (matrix[2][0] == 'O' && matrix[1][1] == 'O' && matrix[0][2] == 'O') {
 		return 'O';
 	}
+	else {
+		return '/';
+	}
 }
 
 int main() {
@@ -127,6 +131,7 @@ int main() {
 	Draw();
 	while (1)
 	{
+		n++;
 		input();
 		Draw();
 		if (win() == 'X') {
@@ -136,6 +141,9 @@ int main() {
 		else if (win() == 'O') {
 			cout << "O Player Win!" << endl;
 			break;
+		}
+		else if (win() == '/' && n == 9) {
+			cout << "It's Draw!" << endl;
 		}
 		togglePlayer();
 	}
