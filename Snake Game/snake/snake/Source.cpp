@@ -49,6 +49,7 @@ void draw() {
 	for (int i = 0; i < width +1; i++) {
 		cout << "#";
 	}
+	cout << "Score : " << Score << endl;
 
 
 }
@@ -95,6 +96,17 @@ void logic() {
 		
 	default:
 		break;
+	}
+
+	//logika agar ketika mengenali tembok, program berakhir
+	if (x > width || x < 0 || y > height || y < 0){
+		gameOver = true;
+	}
+	if (x == fruitX && y == fruitY) {
+		// membuat score
+		Score += 10;
+		fruitX = rand() % width;
+		fruitY = rand() % height;
 	}
 }
 
