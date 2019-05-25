@@ -19,9 +19,10 @@ void setup() {
 void draw() {
 	system("cls");
 	// membuat map top
-	for (int i = 0; i < width ; i++) {
+	for (int i = 0; i < width+2 ; i++) {
 		cout << "#";
 	}
+	cout << endl;
 	// area tengah 
 	for (int i = 0; i < height; i++) {
 		for (int j = 0; j < width; j++) {
@@ -44,11 +45,11 @@ void draw() {
 		}
 		cout << endl;
 	}
-
 	// membuat map battom
-	for (int i = 0; i < width +1; i++) {
+	for (int i = 0; i < width +2; i++) {
 		cout << "#";
 	}
+	cout << endl;
 	cout << "Score : " << Score << endl;
 
 
