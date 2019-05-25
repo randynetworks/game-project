@@ -129,6 +129,14 @@ int main() {
 	{
 		input();
 		Draw();
+		if (win() == 'X') {
+			cout << "X Player Win!" << endl;
+			break;
+		}
+		else if (win() == 'O') {
+			cout << "O Player Win!" << endl;
+			break;
+		}
 		togglePlayer();
 	}
 
