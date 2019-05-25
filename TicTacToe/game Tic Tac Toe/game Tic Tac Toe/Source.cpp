@@ -62,11 +62,77 @@ void togglePlayer() {
 	}
 }
 
+// algoritma player menang
+char win() {
+	//player X
+	//baris
+	if (matrix[0][0] == 'X' && matrix[0][1] == 'X' && matrix[0][2] == 'X') {
+		return 'X';
+	}
+	else if (matrix[1][0] == 'X' && matrix[1][1] == 'X' && matrix[1][2] == 'X') {
+		return 'X';
+	}
+	else if (matrix[2][0] == 'X' && matrix[2][1] == 'X' && matrix[2][2] == 'X') {
+		return 'X';
+	}
+	//kolom
+	else if (matrix[0][0] == 'X' && matrix[1][0] == 'X' && matrix[2][0] == 'X') {
+		return 'X';
+	}
+	else if (matrix[0][1] == 'X' && matrix[1][1] == 'X' && matrix[2][1] == 'X') {
+		return 'X';
+	}
+	else if (matrix[0][2] == 'X' && matrix[1][2] == 'X' && matrix[2][2] == 'X') {
+		return 'X';
+	}
+	// diagonal
+	else if (matrix[0][0] == 'X' && matrix[1][11] == 'X' && matrix[2][22] == 'X') {
+		return 'X';
+	}
+	else if (matrix[2][0] == 'X' && matrix[1][1] == 'X' && matrix[0][2] == 'X') {
+		return 'X';
+	}
+	//player O
+	//baris
+	if (matrix[0][0] == 'O' && matrix[0][1] == 'O' && matrix[0][2] == 'O') {
+		return 'O';
+	}
+	else if (matrix[1][0] == 'O' && matrix[1][1] == 'O' && matrix[1][2] == 'O') {
+		return 'O';
+	}
+	else if (matrix[2][0] == 'O' && matrix[2][1] == 'O' && matrix[2][2] == 'O') {
+		return 'O';
+	}
+	//kolom
+	else if (matrix[0][0] == 'O' && matrix[1][0] == 'O' && matrix[2][0] == 'O') {
+		return 'O';
+	}
+	else if (matrix[0][1] == 'O' && matrix[1][1] == 'O' && matrix[2][1] == 'O') {
+		return 'O';
+	}
+	else if (matrix[0][2] == 'O' && matrix[1][2] == 'O' && matrix[2][2] == 'O') {
+		return 'O';
+	}
+	// diagonal
+	else if (matrix[0][0] == 'O' && matrix[1][11] == 'O' && matrix[2][22] == 'O') {
+		return 'O';
+	}
+	else if (matrix[2][0] == 'O' && matrix[1][1] == 'O' && matrix[0][2] == 'O') {
+		return 'O';
+	}
+}
+
 int main() {
 
 	Draw();
-	system("pause");
+	while (1)
+	{
+		input();
+		Draw();
+		togglePlayer();
+	}
 
+	system("pause");
 	cin.get();
 	return 0;
 }
