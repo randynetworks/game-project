@@ -1,4 +1,5 @@
 #include <iostream>
+#include <conio.h>
 using namespace std;
 bool gameOver;
 const int width = 20;
@@ -52,10 +53,49 @@ void draw() {
 
 }
 void input() {
-
+	//control handdle
+	if (_kbhit()) {
+		switch (_getch()){
+		case 'a':
+			dir = LEFT;
+			break;
+		case 'd':
+			dir = RIGHT;
+			break;
+		case 'w':
+			dir = UP;
+			break;
+		case 's':
+			dir = DOWN;
+			break;
+		case 'x':
+			gameOver = true;
+			break;
+		}
+	}
 }
 void logic() {
 
+	//direction
+	switch (dir){
+
+	case LEFT:
+		x--;
+		break;
+	case RIGHT:
+		x++;
+		break;
+	case UP:
+		y--; 
+		break;
+		
+	case DOWN:
+		y++;
+		break;
+		
+	default:
+		break;
+	}
 }
 
 int main() {
