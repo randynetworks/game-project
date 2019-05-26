@@ -5,6 +5,9 @@ bool gameOver;
 const int width = 20;
 const int height = 20;
 int x, y, fruitX, fruitY, Score;
+// deklarasi untuk membuat ujung dari snakenya
+int tailX[100], tailY[100];
+int nTail;
 enum eDirection {STOP = 0, LEFT, RIGHT, UP, DOWN};
 eDirection dir;
 //membuat function : Setup, Draw, Input, logic 
@@ -37,7 +40,17 @@ void draw() {
 				cout << "F";
 			}
 			else {
-				cout << " ";
+				// membuat tail
+				bool print = false;
+				for (int k = 0; k < nTail; k++) {
+					if (tailX[k] == j && tailY[k] == i) {
+						cout << "o";
+						print = true;
+					}
+				}
+				if (!print) {
+					cout << " ";
+				}
 			}
 			if (j == width - 1) {
 				cout << "#";
@@ -77,6 +90,21 @@ void input() {
 	}
 }
 void logic() {
+	//untuk ekornya
+	int prevX = tailX[0];
+	int prevY = tailY[0];
+	int prev2X, prev2Y;
+	for (int i = 0; i < nTail; i++) {
+		prev2X = tailX[i];
+		prev2Y = tailY[i];
+		tailX[i] = prevX;
+		tailY[i] = prevY;
+		prevX = prev2X;
+		prevY = prev2Y;
+		tailX[0] = x;
+		tailY[0] = y;
+
+	}
 
 	//direction
 	switch (dir){
@@ -108,6 +136,7 @@ void logic() {
 		Score += 10;
 		fruitX = rand() % width;
 		fruitY = rand() % height;
+		nTail++;
 	}
 }
 
