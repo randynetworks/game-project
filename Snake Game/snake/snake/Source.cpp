@@ -131,6 +131,12 @@ void logic() {
 	if (x > width || x < 0 || y > height || y < 0){
 		gameOver = true;
 	}
+	//logika agar ketika ularnya mengenai ekornya, dia mati, program berakhir
+	for (int i = 0; i < nTail; i++) {
+		if (tailX[i] == x && tailY[i] == y) {
+			gameOver = true;
+		}
+	}
 	if (x == fruitX && y == fruitY) {
 		// membuat score
 		Score += 10;
