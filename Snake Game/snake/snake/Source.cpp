@@ -65,6 +65,9 @@ void draw() {
 	}
 	cout << endl;
 	cout << "Score : " << Score << endl;
+	cout << "How To: " << endl;
+	cout << "W = UP, S = DOWN" << endl;
+	cout << "D = RIGHT, A = LEFT" << endl;
 
 
 }
