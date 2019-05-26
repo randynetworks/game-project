@@ -1,5 +1,6 @@
 #include <iostream>
 #include <conio.h>
+#include <Windows.h>
 using namespace std;
 bool gameOver;
 const int width = 20;
@@ -127,9 +128,21 @@ void logic() {
 		break;
 	}
 
-	//logika agar ketika mengenali tembok, program berakhir
+	/*logika agar ketika mengenai tembok, program berakhir
 	if (x > width || x < 0 || y > height || y < 0){
 		gameOver = true;
+	}
+	*/
+	//logika agar ketika mengenai tembok, ular menembus dan berpindah ke sisi lainnya
+	if (x >= width) { 
+		x = 0; 
+	} else if (x < 0) { 
+		x = width - 1; 
+	}
+	if (y >= height) { 
+		y = 0; 
+	} else if (y < 0) {
+		y = height - 1; 
 	}
 	//logika agar ketika ularnya mengenai ekornya, dia mati, program berakhir
 	for (int i = 0; i < nTail; i++) {
@@ -153,6 +166,7 @@ int main() {
 		draw();
 		input();
 		logic();
+		Sleep(10); //sleep()
 	}
 
 	return 0;
